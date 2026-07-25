@@ -1,0 +1,52 @@
+name: RELAY object proposal
+description: Propose a Term, Domain, Profile, Package, Mapping, or Conformance Rule.
+title: "[Proposal]: "
+labels: []
+body:
+  - type: dropdown
+    id: object_type
+    attributes:
+      label: Object type
+      options:
+        - Term
+        - Domain
+        - Profile
+        - Package
+        - Mapping
+        - Conformance Rule
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and use case
+      description: What exchange or interoperability failure does this address?
+    validations:
+      required: true
+  - type: textarea
+    id: semantics
+    attributes:
+      label: Proposed meaning or constraint
+      description: Define the concept or rule independently of any serialization.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and affected objects
+      description: Existing terms, domains, profiles, packages, mappings, or rules affected.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Existing standards and alternatives
+      description: Relevant external concepts, standards, systems, and rejected alternatives.
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility and migration impact
+      description: State whether the proposal is additive, narrowing, breaking, or information-losing.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Examples or evidence
+      description: Real datasets, SOPs, system exports, or references supporting the proposal.

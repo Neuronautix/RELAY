@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: RELAY architecture
+    url: https://github.com/Neuronautix/RELAY/blob/main/docs/architecture.md
+    about: Review the architecture before proposing a new object.

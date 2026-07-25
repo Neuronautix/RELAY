@@ -1,0 +1,27 @@
+name: Specification or tooling defect
+description: Report an inconsistency, invalid reference, validator problem, or documentation defect.
+title: "[Defect]: "
+labels: []
+body:
+  - type: textarea
+    id: defect
+    attributes:
+      label: Defect
+      description: Describe the observed inconsistency or failure.
+    validations:
+      required: true
+  - type: input
+    id: object
+    attributes:
+      label: Affected identifier or path
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior or meaning
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction or validation output
+      render: shell

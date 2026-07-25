@@ -1,0 +1,24 @@
+object_type: domain
+id: relay.domain.protocols-execution
+title: Protocols and execution
+version: 0.1.0
+status: proposal
+classification: normative
+description: Versioned protocol definitions, nested protocol-segment definitions, execution records, actual
+  timing, deviations, and comparisons between plan and execution.
+maintainers:
+- Neuronautix
+dependencies:
+- relay.domain.core
+terms: []
+rules: []
+scope:
+  includes:
+  - ProtocolDefinition
+  - ProtocolSegmentDefinition
+  - ProtocolExecution
+  - SegmentExecution
+  - ProtocolDeviation
+  excludes:
+  - Assay-specific endpoint semantics
+  - Software analysis lineage

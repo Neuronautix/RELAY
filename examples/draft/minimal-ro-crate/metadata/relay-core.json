@@ -1,0 +1,33 @@
+{
+  "relay_schema_version": "0.1.0",
+  "dataset": {
+    "uid": "urn:uuid:11111111-1111-4111-8111-111111111111",
+    "title": "Illustrative laboratory dataset",
+    "status": "active"
+  },
+  "dataset_release": {
+    "uid": "urn:uuid:22222222-2222-4222-8222-222222222222",
+    "dataset_uid": "urn:uuid:11111111-1111-4111-8111-111111111111",
+    "version": "0.1.0",
+    "status": "prepared",
+    "prepared_at": "2026-07-25T00:00:00Z",
+    "created_by_agent_uid": "urn:uuid:33333333-3333-4333-8333-333333333333"
+  },
+  "agents": [
+    {
+      "uid": "urn:uuid:33333333-3333-4333-8333-333333333333",
+      "agent_type": "organization",
+      "display_name": "Example laboratory"
+    }
+  ],
+  "registry_declarations": [
+    {
+      "registry_id": "relay.terms",
+      "version": "0.1.0"
+    },
+    {
+      "registry_id": "relay.rules",
+      "version": "0.1.0"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+object_type: package
+id: relay.package.example
+title: Example package
+version: 0.1.0
+status: proposal
+classification: normative
+description: A transfer representation.
+maintainers: []
+base_specification:
+  name: Example
+  version: '1.0'
+  uri: https://example.org/spec/1.0
+root_entity: relay.term.dataset-release
+distribution_modes: []
+required_components: []
+conformance_rules: []

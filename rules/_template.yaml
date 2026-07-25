@@ -1,0 +1,11 @@
+object_type: conformance_rule
+id: RELAY-EXAMPLE-001
+title: Example requirement
+version: 0.1.0
+status: proposal
+scope:
+- relay.domain.example
+level: MUST
+statement: A precise and testable normative statement.
+rationale: Why the requirement exists.
+testability: hybrid

@@ -1,0 +1,14 @@
+object_type: domain
+id: relay.domain.example
+title: Example domain
+version: 0.1.0
+status: proposal
+classification: normative
+description: A concise semantic scope.
+maintainers: []
+dependencies: []
+terms: []
+rules: []
+scope:
+  includes: []
+  excludes: []

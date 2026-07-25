@@ -1,0 +1,25 @@
+object_type: mapping
+id: relay.mapping.example
+title: Example mapping
+version: 0.1.0
+status: proposal
+classification: informative
+description: A versioned mapping.
+maintainers: []
+source:
+  name: RELAY
+  version: 0.1.0
+target:
+  name: External specification
+  version: '1.0'
+  uri: https://example.org/spec
+direction: relay_to_target
+entries:
+- source: relay.term.example
+  target: external:Example
+  relation: close
+  conditions: []
+  transformation: null
+  information_loss: []
+  evidence: []
+  review_status: unreviewed

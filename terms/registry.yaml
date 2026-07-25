@@ -1,0 +1,131 @@
+object_type: term_registry
+id: relay.terms
+title: RELAY term registry
+version: 0.1.0
+status: proposal
+classification: normative
+maintainers:
+- Neuronautix
+terms:
+- id: relay.term.dataset
+  label: Dataset
+  kind: entity
+  domain: relay.domain.core
+  status: proposal
+  definition: A stable conceptual collection of related research data and metadata that may have multiple
+    immutable releases.
+- id: relay.term.dataset-release
+  label: Dataset release
+  kind: entity
+  domain: relay.domain.core
+  status: proposal
+  definition: An immutable, versioned snapshot of a Dataset intended for transfer, citation, publication,
+    or preservation.
+- id: relay.term.agent
+  label: Agent
+  kind: entity
+  domain: relay.domain.core
+  status: proposal
+  definition: An entity capable of bearing responsibility for an activity, assertion, resource, or release.
+- id: relay.term.person
+  label: Person
+  kind: entity
+  broader:
+  - relay.term.agent
+  domain: relay.domain.core
+  status: proposal
+  definition: A human Agent.
+- id: relay.term.organization
+  label: Organization
+  kind: entity
+  broader:
+  - relay.term.agent
+  domain: relay.domain.core
+  status: proposal
+  definition: A collective Agent such as a legal entity, research institution, department, facility, company,
+    or consortium.
+- id: relay.term.software-agent
+  label: Software agent
+  kind: entity
+  broader:
+  - relay.term.agent
+  domain: relay.domain.core
+  status: proposal
+  definition: A versioned software component that performs or contributes to an activity.
+- id: relay.term.automated-service
+  label: Automated service
+  kind: entity
+  broader:
+  - relay.term.agent
+  domain: relay.domain.core
+  status: proposal
+  definition: A deployed service or operating instance that performs activities, uses software, and is
+    operated by an Agent.
+- id: relay.term.affiliation
+  label: Affiliation
+  kind: relation_entity
+  domain: relay.domain.core
+  status: proposal
+  definition: A time-bounded relationship between a Person and an Organization, optionally including an
+    organizational unit and position.
+- id: relay.term.entity-identifier
+  label: Entity identifier
+  kind: relation_entity
+  domain: relay.domain.core
+  status: proposal
+  definition: An assertion associating an entity with an identifier scheme, lexical value, canonical URI,
+    role, issuer, and status.
+- id: relay.term.role-assignment
+  label: Role assignment
+  kind: relation_entity
+  domain: relay.domain.core
+  status: proposal
+  definition: A time-bounded assignment of a role to an Agent in a specified research or exchange context.
+- id: relay.term.location
+  label: Location
+  kind: entity
+  domain: relay.domain.core
+  status: proposal
+  definition: A stable spatial context such as a site, building, facility, room, or controlled area.
+- id: relay.term.physical-resource
+  label: Physical resource
+  kind: entity
+  domain: relay.domain.core
+  status: proposal
+  definition: An identifiable physical object used, contained, installed, or situated in research, including
+    cages, racks, instruments, and sensors.
+- id: relay.term.resource-placement
+  label: Resource placement
+  kind: relation_entity
+  domain: relay.domain.core
+  status: proposal
+  definition: A time-bounded relation placing a PhysicalResource in a Location or on, in, or within another
+    PhysicalResource.
+- id: relay.term.provenance-event
+  label: Provenance event
+  kind: entity
+  domain: relay.domain.core
+  status: proposal
+  definition: An event that creates, imports, transforms, migrates, corrects, validates, releases, or
+    invalidates metadata or exchange content.
+- id: relay.term.provenance-link
+  label: Provenance link
+  kind: relation_entity
+  domain: relay.domain.core
+  status: proposal
+  definition: A typed participation relation between an entity and a ProvenanceEvent, such as used, generated,
+    modified, validated, or invalidated.
+- id: relay.term.registry-declaration
+  label: Registry declaration
+  kind: entity
+  domain: relay.domain.core
+  status: proposal
+  definition: A declaration of the exact identifier, version, and integrity information for a schema,
+    term, value-set, unit, or rule registry used in an exchange.
+- id: relay.term.note
+  label: Note
+  kind: entity
+  domain: relay.domain.core
+  status: proposal
+  definition: A scoped human-readable annotation that supplements, but does not replace, required structured
+    metadata.

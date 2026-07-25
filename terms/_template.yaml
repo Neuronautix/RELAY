@@ -1,0 +1,10 @@
+object_type: term
+id: relay.term.example
+label: Example term
+kind: entity
+domain: relay.domain.example
+status: proposal
+definition: One precise, non-circular definition.
+broader: []
+related: []
+notes: []

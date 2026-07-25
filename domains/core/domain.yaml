@@ -1,0 +1,50 @@
+object_type: domain
+id: relay.domain.core
+title: RELAY Core
+version: 0.1.0
+status: proposal
+classification: normative
+description: Stable dataset and release identity, agents, identifiers, affiliations, roles, stable locations,
+  generic physical resources, metadata provenance, registries, and scoped notes.
+maintainers:
+- Neuronautix
+dependencies: []
+terms:
+- relay.term.dataset
+- relay.term.dataset-release
+- relay.term.agent
+- relay.term.person
+- relay.term.organization
+- relay.term.software-agent
+- relay.term.automated-service
+- relay.term.affiliation
+- relay.term.entity-identifier
+- relay.term.role-assignment
+- relay.term.location
+- relay.term.physical-resource
+- relay.term.resource-placement
+- relay.term.provenance-event
+- relay.term.provenance-link
+- relay.term.registry-declaration
+- relay.term.note
+rules:
+- RELAY-CORE-001
+- RELAY-CORE-002
+- RELAY-CORE-003
+- RELAY-CORE-004
+- RELAY-CORE-005
+- RELAY-ID-001
+- RELAY-SEM-001
+- RELAY-DESIGN-001
+scope:
+  includes:
+  - Dataset and DatasetRelease
+  - Agent subtypes and responsibilities
+  - Identifiers, affiliations, and roles
+  - Stable spatial locations
+  - Generic physical-resource identity and placement
+  - Metadata provenance and registry declarations
+  excludes:
+  - Investigation, Study, and Assay content
+  - Domain-specific cage, instrument, or sensor attributes
+  - Exchange-package serialization details

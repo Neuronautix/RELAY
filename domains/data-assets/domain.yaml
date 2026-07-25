@@ -1,0 +1,23 @@
+object_type: domain
+id: relay.domain.data-assets
+title: Data assets
+version: 0.1.0
+status: proposal
+classification: normative
+description: Digital research objects, file and object identity, formats, checksums, access, repositories,
+  versions, and relations among raw, primary, processed, and derived assets.
+maintainers:
+- Neuronautix
+dependencies:
+- relay.domain.core
+terms: []
+rules: []
+scope:
+  includes:
+  - Data asset identity
+  - Integrity and access
+  - Version and repository records
+  - Asset relations
+  excludes:
+  - Package file inventory as a transfer concern
+  - Scientific interpretation

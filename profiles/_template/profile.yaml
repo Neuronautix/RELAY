@@ -1,0 +1,17 @@
+object_type: profile
+id: relay.profile.example
+title: Example profile
+version: 0.1.0
+status: proposal
+classification: normative
+description: One exchange or research use case.
+maintainers: []
+domains: []
+package: null
+requirements:
+  required: []
+  recommended: []
+  optional: []
+  conditional: []
+  excluded: []
+rules: []

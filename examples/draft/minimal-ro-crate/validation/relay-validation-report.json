@@ -1,0 +1,27 @@
+{
+  "validator": {
+    "name": "RELAY draft example",
+    "version": "0.1.0"
+  },
+  "validated_at": "2026-07-25T00:00:00Z",
+  "profile": {
+    "id": "relay.profile.core-exchange",
+    "version": "0.1.0"
+  },
+  "overall_status": "not_tested",
+  "rule_outcomes": [
+    {
+      "rule_id": "RELAY-PACKAGE-001",
+      "outcome": "not_tested"
+    },
+    {
+      "rule_id": "RELAY-PACKAGE-002",
+      "outcome": "not_tested"
+    },
+    {
+      "rule_id": "RELAY-PACKAGE-003",
+      "outcome": "not_tested"
+    }
+  ],
+  "note": "Illustrative draft only; this is not a conformance result."
+}
