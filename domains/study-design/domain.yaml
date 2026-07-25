@@ -1,0 +1,23 @@
+object_type: domain
+id: relay.domain.study-design
+title: Study design
+version: 0.1.0
+status: proposal
+classification: normative
+description: Experimental factors, groups, allocation, blinding, randomization, controls, and explicit
+  assignment, experimental, observational, and analysis units.
+maintainers:
+- Neuronautix
+dependencies:
+- relay.domain.core
+- relay.domain.isa
+terms: []
+rules: []
+scope:
+  includes:
+  - Design factors and levels
+  - Groups and memberships
+  - Allocation and unit roles
+  excludes:
+  - Intrinsic subject identity
+  - Assay endpoint values

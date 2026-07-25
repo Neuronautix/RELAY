@@ -1,0 +1,24 @@
+object_type: domain
+id: relay.domain.isa
+title: ISA context
+version: 0.1.0
+status: proposal
+classification: normative
+description: Investigation, Study, and Assay organization aligned with the ISA conceptual model without
+  making an ISA serialization authoritative.
+maintainers:
+- Neuronautix
+dependencies:
+- relay.domain.core
+terms: []
+rules: []
+scope:
+  includes:
+  - Investigation
+  - Study
+  - Assay
+  - ISA-level relations and contextual metadata
+  excludes:
+  - Detailed study allocation
+  - Protocol execution internals
+  - Package serialization

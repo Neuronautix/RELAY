@@ -1,0 +1,24 @@
+object_type: domain
+id: relay.domain.housing-cages
+title: Housing and cages
+version: 0.1.0
+status: proposal
+classification: normative
+description: Housing units, cages, racks, rack positions, occupancy intervals, placements, husbandry configurations,
+  and housing events.
+maintainers:
+- Neuronautix
+dependencies:
+- relay.domain.core
+- relay.domain.subjects
+terms: []
+rules: []
+scope:
+  includes:
+  - Cage and housing-resource identity
+  - Occupancy intervals
+  - Rack and cage placement
+  - Husbandry events
+  excludes:
+  - Room-level environmental measurement definitions
+  - Assay acquisition hardware

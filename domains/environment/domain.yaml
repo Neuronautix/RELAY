@@ -1,0 +1,22 @@
+object_type: domain
+id: relay.domain.environment
+title: Environment
+version: 0.1.0
+status: proposal
+classification: normative
+description: Planned environmental settings, measured environmental observations, schedules, disturbances,
+  and spatial and temporal scope.
+maintainers:
+- Neuronautix
+dependencies:
+- relay.domain.core
+terms: []
+rules: []
+scope:
+  includes:
+  - Environmental settings
+  - Measured observations
+  - Schedules and events
+  excludes:
+  - Cage occupancy
+  - Instrument configuration
