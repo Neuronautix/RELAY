@@ -51,10 +51,14 @@ def check_common(path: Path, obj: dict[str, Any], expected_type: str, problems: 
     if obj.get("object_type") != expected_type:
         problems.append(Problem(path, f"object_type must be {expected_type!r}"))
     oid = obj.get("id")
-    if isinstance(oid, str) and not OBJECT_ID.match(oid):
+    if "id" in obj and not isinstance(oid, str):
+        problems.append(Problem(path, f"object identifier must be a string: {oid!r}"))
+    elif isinstance(oid, str) and not OBJECT_ID.match(oid):
         problems.append(Problem(path, f"invalid object identifier: {oid}"))
     version = obj.get("version")
-    if isinstance(version, str) and not SEMVER.match(version):
+    if "version" in obj and not isinstance(version, str):
+        problems.append(Problem(path, f"version must be a string: {version!r}"))
+    elif isinstance(version, str) and not SEMVER.match(version):
         problems.append(Problem(path, f"version is not semantic versioning: {version}"))
     if obj.get("status") not in ALLOWED_STATUS:
         problems.append(Problem(path, f"invalid status: {obj.get('status')!r}"))
@@ -83,23 +87,33 @@ def validate_repository(root: Path) -> list[Problem]:
         for key in ["id", "title", "version", "status", "classification", "terms"]:
             if key not in term_doc:
                 problems.append(Problem(term_path, f"missing required key: {key}"))
-        if isinstance(term_doc.get("version"), str) and not SEMVER.match(term_doc["version"]):
+        registry_version = term_doc.get("version")
+        if "version" in term_doc and not isinstance(registry_version, str):
+            problems.append(Problem(term_path, f"registry version must be a string: {registry_version!r}"))
+        elif isinstance(registry_version, str) and not SEMVER.match(registry_version):
             problems.append(Problem(term_path, "registry version is not semantic versioning"))
         for term in term_doc.get("terms", []) or []:
             if not isinstance(term, dict):
                 problems.append(Problem(term_path, "each term must be a mapping"))
                 continue
-            for key in ["id", "label", "kind", "domain", "status", "definition"]:
+            for key in ["id", "label", "version", "kind", "domain", "status", "definition"]:
                 if key not in term:
                     problems.append(Problem(term_path, f"term missing required key {key}: {term}"))
             tid = term.get("id")
-            if isinstance(tid, str):
+            if "id" in term and not isinstance(tid, str):
+                problems.append(Problem(term_path, f"Term identifier must be a string: {tid!r}"))
+            elif isinstance(tid, str):
                 if not tid.startswith("relay.term.") or not OBJECT_ID.match(tid):
                     problems.append(Problem(term_path, f"invalid Term identifier: {tid}"))
                 if tid in term_ids:
                     problems.append(Problem(term_path, f"duplicate Term identifier: {tid}"))
                 term_ids.add(tid)
                 register(term_path, tid, term)
+            term_version = term.get("version")
+            if "version" in term and not isinstance(term_version, str):
+                problems.append(Problem(term_path, f"Term version must be a string for {tid}: {term_version!r}"))
+            elif isinstance(term_version, str) and not SEMVER.match(term_version):
+                problems.append(Problem(term_path, f"invalid Term version for {tid}: {term_version}"))
             if term.get("status") not in ALLOWED_STATUS:
                 problems.append(Problem(term_path, f"invalid Term status for {tid}: {term.get('status')!r}"))
 
@@ -155,6 +169,8 @@ def validate_repository(root: Path) -> list[Problem]:
     # Term references, including broader/related links and owning Domains.
     if term_doc:
         for term in term_doc.get("terms", []) or []:
+            if not isinstance(term, dict):
+                continue
             tid = term.get("id", "<unknown>")
             domain = term.get("domain")
             if domain not in domain_ids:
@@ -214,7 +230,18 @@ def validate_repository(root: Path) -> list[Problem]:
                 if key not in obj:
                     problems.append(Problem(path, f"Mapping missing required key: {key}"))
             for entry in obj.get("entries", []) or []:
-                for key in ["source", "target", "relation", "conditions", "transformation", "information_loss", "evidence", "review_status"]:
+                for key in [
+                    "source",
+                    "target",
+                    "relation",
+                    "conditions",
+                    "transformation",
+                    "information_loss",
+                    "cardinality_or_datatype_impact",
+                    "evidence",
+                    "review_status",
+                    "reviewer",
+                ]:
                     if key not in entry:
                         problems.append(Problem(path, f"mapping entry missing key {key}: {entry}"))
 

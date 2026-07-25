@@ -21,5 +21,7 @@ entries:
   conditions: []
   transformation: null
   information_loss: []
+  cardinality_or_datatype_impact: []
   evidence: []
   review_status: unreviewed
+  reviewer: null

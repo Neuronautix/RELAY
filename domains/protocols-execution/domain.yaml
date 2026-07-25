@@ -11,7 +11,8 @@ maintainers:
 dependencies:
 - relay.domain.core
 terms: []
-rules: []
+rules:
+- RELAY-SEM-001
 scope:
   includes:
   - ProtocolDefinition

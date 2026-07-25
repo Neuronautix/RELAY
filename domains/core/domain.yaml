@@ -34,8 +34,6 @@ rules:
 - RELAY-CORE-004
 - RELAY-CORE-005
 - RELAY-ID-001
-- RELAY-SEM-001
-- RELAY-DESIGN-001
 scope:
   includes:
   - Dataset and DatasetRelease

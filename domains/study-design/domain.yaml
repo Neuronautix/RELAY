@@ -12,7 +12,8 @@ dependencies:
 - relay.domain.core
 - relay.domain.isa
 terms: []
-rules: []
+rules:
+- RELAY-DESIGN-001
 scope:
   includes:
   - Design factors and levels

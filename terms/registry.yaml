@@ -9,6 +9,7 @@ maintainers:
 terms:
 - id: relay.term.dataset
   label: Dataset
+  version: 0.1.0
   kind: entity
   domain: relay.domain.core
   status: proposal
@@ -16,6 +17,7 @@ terms:
     immutable releases.
 - id: relay.term.dataset-release
   label: Dataset release
+  version: 0.1.0
   kind: entity
   domain: relay.domain.core
   status: proposal
@@ -23,12 +25,14 @@ terms:
     or preservation.
 - id: relay.term.agent
   label: Agent
+  version: 0.1.0
   kind: entity
   domain: relay.domain.core
   status: proposal
   definition: An entity capable of bearing responsibility for an activity, assertion, resource, or release.
 - id: relay.term.person
   label: Person
+  version: 0.1.0
   kind: entity
   broader:
   - relay.term.agent
@@ -37,6 +41,7 @@ terms:
   definition: A human Agent.
 - id: relay.term.organization
   label: Organization
+  version: 0.1.0
   kind: entity
   broader:
   - relay.term.agent
@@ -46,6 +51,7 @@ terms:
     or consortium.
 - id: relay.term.software-agent
   label: Software agent
+  version: 0.1.0
   kind: entity
   broader:
   - relay.term.agent
@@ -54,6 +60,7 @@ terms:
   definition: A versioned software component that performs or contributes to an activity.
 - id: relay.term.automated-service
   label: Automated service
+  version: 0.1.0
   kind: entity
   broader:
   - relay.term.agent
@@ -63,6 +70,7 @@ terms:
     operated by an Agent.
 - id: relay.term.affiliation
   label: Affiliation
+  version: 0.1.0
   kind: relation_entity
   domain: relay.domain.core
   status: proposal
@@ -70,6 +78,7 @@ terms:
     organizational unit and position.
 - id: relay.term.entity-identifier
   label: Entity identifier
+  version: 0.1.0
   kind: relation_entity
   domain: relay.domain.core
   status: proposal
@@ -77,18 +86,21 @@ terms:
     role, issuer, and status.
 - id: relay.term.role-assignment
   label: Role assignment
+  version: 0.1.0
   kind: relation_entity
   domain: relay.domain.core
   status: proposal
   definition: A time-bounded assignment of a role to an Agent in a specified research or exchange context.
 - id: relay.term.location
   label: Location
+  version: 0.1.0
   kind: entity
   domain: relay.domain.core
   status: proposal
   definition: A stable spatial context such as a site, building, facility, room, or controlled area.
 - id: relay.term.physical-resource
   label: Physical resource
+  version: 0.1.0
   kind: entity
   domain: relay.domain.core
   status: proposal
@@ -96,6 +108,7 @@ terms:
     cages, racks, instruments, and sensors.
 - id: relay.term.resource-placement
   label: Resource placement
+  version: 0.1.0
   kind: relation_entity
   domain: relay.domain.core
   status: proposal
@@ -103,6 +116,7 @@ terms:
     PhysicalResource.
 - id: relay.term.provenance-event
   label: Provenance event
+  version: 0.1.0
   kind: entity
   domain: relay.domain.core
   status: proposal
@@ -110,6 +124,7 @@ terms:
     invalidates metadata or exchange content.
 - id: relay.term.provenance-link
   label: Provenance link
+  version: 0.1.0
   kind: relation_entity
   domain: relay.domain.core
   status: proposal
@@ -117,6 +132,7 @@ terms:
     modified, validated, or invalidated.
 - id: relay.term.registry-declaration
   label: Registry declaration
+  version: 0.1.0
   kind: entity
   domain: relay.domain.core
   status: proposal
@@ -124,6 +140,7 @@ terms:
     term, value-set, unit, or rule registry used in an exchange.
 - id: relay.term.note
   label: Note
+  version: 0.1.0
   kind: entity
   domain: relay.domain.core
   status: proposal
