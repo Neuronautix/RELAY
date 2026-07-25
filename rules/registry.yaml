@@ -1,0 +1,179 @@
+object_type: conformance_rule_registry
+id: relay.rules
+title: RELAY conformance rule registry
+version: 0.1.0
+status: proposal
+classification: normative
+maintainers:
+- Neuronautix
+rules:
+- id: RELAY-CORE-001
+  title: Canonical entity UID
+  version: 0.1.0
+  status: proposal
+  scope:
+  - relay.domain.core
+  level: MUST
+  statement: Every canonical research entity has a UID that is unique within the exchange and suitable
+    for stable cross-record reference.
+  rationale: Stable identity prevents label- and row-based joins.
+  testability: automated
+- id: RELAY-CORE-002
+  title: Immutable released DatasetRelease
+  version: 0.1.0
+  status: proposal
+  scope:
+  - relay.domain.core
+  level: MUST
+  statement: A DatasetRelease links to exactly one Dataset and is immutable after its status becomes released;
+    corrections create a new linked DatasetRelease.
+  rationale: Scientific content versioning must be distinguishable from package regeneration.
+  testability: hybrid
+- id: RELAY-CORE-003
+  title: Declared Agent subtype
+  version: 0.1.0
+  status: proposal
+  scope:
+  - relay.domain.core
+  level: MUST
+  statement: 'Every Agent declares exactly one primary subtype: Person, Organization, SoftwareAgent, or
+    AutomatedService.'
+  rationale: Responsibilities and identifier expectations differ by Agent subtype.
+  testability: automated
+- id: RELAY-CORE-004
+  title: Affiliation and role separation
+  version: 0.1.0
+  status: proposal
+  scope:
+  - relay.domain.core
+  level: MUST NOT
+  statement: An implementation must not infer a RoleAssignment solely from an Affiliation or infer an
+    Affiliation solely from a RoleAssignment.
+  rationale: Employment and research responsibility are distinct relations.
+  testability: hybrid
+- id: RELAY-CORE-005
+  title: Location and PhysicalResource separation
+  version: 0.1.0
+  status: proposal
+  scope:
+  - relay.domain.core
+  level: MUST
+  statement: Location is used for stable spatial contexts; cages, racks, instruments, sensors, and containers
+    are represented as PhysicalResources with explicit placements.
+  rationale: Treating every physical object as a location destroys resource identity and temporal placement.
+  testability: hybrid
+- id: RELAY-ID-001
+  title: Declared external identifier scheme
+  version: 0.1.0
+  status: proposal
+  scope:
+  - relay.domain.core
+  level: MUST
+  statement: Every external identifier records its scheme, lexical value, canonical URI when defined,
+    identifier role, and source; an identifier must not be inferred only from a label.
+  rationale: Persistent identifiers require explicit provenance and normalization.
+  testability: automated
+- id: RELAY-SEM-001
+  title: Definition and execution separation
+  version: 0.1.0
+  status: proposal
+  scope:
+  - relay.domain.protocols-execution
+  level: MUST
+  statement: Reusable definitions and actual executions are represented as distinct entities and linked
+    explicitly; deviations do not overwrite either record.
+  rationale: Planned and performed procedures must be comparable.
+  testability: hybrid
+- id: RELAY-DESIGN-001
+  title: Explicit unit roles
+  version: 0.1.0
+  status: proposal
+  scope:
+  - relay.domain.study-design
+  level: MUST
+  statement: Assignment, experimental, observational, biological-subject, and analysis units are declared
+    explicitly when they are not identical.
+  rationale: This prevents invalid attribution and pseudoreplication.
+  testability: hybrid
+- id: RELAY-PROFILE-001
+  title: No semantic redefinition by profile
+  version: 0.1.0
+  status: proposal
+  scope: []
+  level: MUST NOT
+  statement: A Profile must not redefine the meaning of an imported Term or Domain while retaining the
+    same identifier.
+  rationale: Profiles constrain shared semantics; they do not fork them silently.
+  testability: manual
+- id: RELAY-PROFILE-002
+  title: Explicit profile obligation
+  version: 0.1.0
+  status: proposal
+  scope: []
+  level: MUST
+  statement: A Profile classifies each selected element or rule as required, recommended, optional, conditional,
+    or excluded for its declared use case.
+  rationale: The comprehensive model is not universally mandatory.
+  testability: automated
+- id: RELAY-PACKAGE-001
+  title: Single DatasetRelease root
+  version: 0.1.0
+  status: proposal
+  scope:
+  - relay.package.ro-crate
+  level: MUST
+  statement: A RELAY ExchangePackage identifies exactly one DatasetRelease as its root research object.
+  rationale: Package identity and scientific release identity must remain unambiguous.
+  testability: automated
+- id: RELAY-PACKAGE-002
+  title: Exact profile declarations
+  version: 0.1.0
+  status: proposal
+  scope:
+  - relay.package.ro-crate
+  level: MUST
+  statement: An ExchangePackage declares the exact identifier and version of each RELAY Profile and base
+    package specification it claims to satisfy.
+  rationale: Conformance cannot be evaluated against an unspecified moving target.
+  testability: automated
+- id: RELAY-PACKAGE-003
+  title: Payload inventory and integrity
+  version: 0.1.0
+  status: proposal
+  scope:
+  - relay.package.ro-crate
+  level: MUST
+  statement: Every included immutable payload file is inventoried with path, content role, media type,
+    byte size, and SHA-256 checksum.
+  rationale: RO-Crate description and transfer integrity are complementary requirements.
+  testability: automated
+- id: RELAY-MAPPING-001
+  title: Complete mapping assertion
+  version: 0.1.0
+  status: proposal
+  scope: []
+  level: MUST
+  statement: Every Mapping declares source and target versions, direction, relation type, conditions,
+    transformation, information loss, evidence, and review status.
+  rationale: Label similarity alone is not an interoperability contract.
+  testability: automated
+- id: RELAY-CONF-001
+  title: Per-rule validation outcome
+  version: 0.1.0
+  status: proposal
+  scope: []
+  level: MUST
+  statement: A validation report records a distinct outcome for every applicable declared Rule and must
+    not report pass for an untested Rule.
+  rationale: Aggregate scores can conceal critical failures or untested requirements.
+  testability: automated
+- id: RELAY-CONF-002
+  title: No FAIR or scientific certification implication
+  version: 0.1.0
+  status: proposal
+  scope: []
+  level: MUST NOT
+  statement: RELAY conformance must not be presented as certification of FAIRness, scientific validity,
+    reproducibility, ethical acceptability, or regulatory compliance.
+  rationale: Technical metadata conformance does not establish those broader properties.
+  testability: manual
