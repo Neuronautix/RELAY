@@ -1,0 +1,22 @@
+object_type: mapping
+id: relay.mapping.isa
+title: RELAY and ISA mapping
+version: 0.1.0
+status: proposal
+classification: informative
+description: Map RELAY Investigation, Study, Assay, protocol, material, process, and data concepts to
+  the ISA Abstract Model and its serializations.
+maintainers:
+- Neuronautix
+source:
+  name: RELAY
+  version: 0.1.0
+target:
+  name: ISA Abstract Model
+  version: '1.0'
+  uri: https://isa-specs.readthedocs.io/en/latest/isamodel.html
+direction: bidirectional_with_conditions
+entries: []
+review:
+  status: not_started
+  notes: No semantic equivalence is claimed until entries are reviewed and tested.

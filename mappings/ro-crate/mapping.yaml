@@ -1,0 +1,22 @@
+object_type: mapping
+id: relay.mapping.ro-crate
+title: RELAY and RO-Crate mapping
+version: 0.1.0
+status: proposal
+classification: informative
+description: Map DatasetRelease, Agents, identifiers, files, profile declarations, and package provenance
+  to RO-Crate 1.3.
+maintainers:
+- Neuronautix
+source:
+  name: RELAY
+  version: 0.1.0
+target:
+  name: RO-Crate
+  version: '1.3'
+  uri: https://w3id.org/ro/crate/1.3
+direction: bidirectional_with_conditions
+entries: []
+review:
+  status: not_started
+  notes: No semantic equivalence is claimed until entries are reviewed and tested.

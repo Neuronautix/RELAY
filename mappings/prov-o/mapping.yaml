@@ -1,0 +1,22 @@
+object_type: mapping
+id: relay.mapping.prov-o
+title: RELAY and PROV-O mapping
+version: 0.1.0
+status: proposal
+classification: informative
+description: Map RELAY metadata provenance and, later, scientific processing provenance to PROV-O while
+  preserving RELAY-specific constraints.
+maintainers:
+- Neuronautix
+source:
+  name: RELAY
+  version: 0.1.0
+target:
+  name: PROV-O
+  version: W3C Recommendation 2013-04-30
+  uri: https://www.w3.org/TR/prov-o/
+direction: bidirectional_with_conditions
+entries: []
+review:
+  status: not_started
+  notes: No semantic equivalence is claimed until entries are reviewed and tested.
