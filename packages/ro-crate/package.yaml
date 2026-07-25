@@ -1,0 +1,38 @@
+object_type: package
+id: relay.package.ro-crate
+title: RELAY RO-Crate Exchange Package
+version: 0.1.0
+status: proposal
+classification: normative
+description: An RO-Crate 1.3 package profile in which the Root Data Entity represents one RELAY DatasetRelease.
+maintainers:
+- Neuronautix
+base_specification:
+  name: RO-Crate
+  version: '1.3'
+  uri: https://w3id.org/ro/crate/1.3
+root_entity: relay.term.dataset-release
+distribution_modes:
+- attached
+- detached
+profile_identifier: relay.profile.core-exchange
+persistent_profile_uri: null
+persistent_profile_uri_status: pending
+required_components:
+- ro-crate-metadata.json
+- exact RELAY profile declarations
+- payload manifest with content role, media type, byte size, and SHA-256 checksum for included immutable
+  files
+- RELAY validation report
+optional_components:
+- ISA-JSON
+- ISA-Tab
+- protocol files
+- data files
+- software and environment descriptions
+conformance_rules:
+- RELAY-PACKAGE-001
+- RELAY-PACKAGE-002
+- RELAY-PACKAGE-003
+- RELAY-CONF-001
+- RELAY-CONF-002

@@ -1,0 +1,46 @@
+object_type: profile
+id: relay.profile.core-exchange
+title: RELAY Core Exchange Profile
+version: 0.1.0
+status: proposal
+classification: normative
+description: A minimal architectural profile for exchanging DatasetRelease identity, responsible Agents,
+  identifiers, registry declarations, and package provenance.
+maintainers:
+- Neuronautix
+domains:
+- relay.domain.core
+package: relay.package.ro-crate
+requirements:
+  required:
+  - relay.term.dataset
+  - relay.term.dataset-release
+  - relay.term.agent
+  - relay.term.entity-identifier
+  - relay.term.registry-declaration
+  recommended:
+  - relay.term.role-assignment
+  - relay.term.provenance-event
+  - relay.term.provenance-link
+  optional:
+  - relay.term.affiliation
+  - relay.term.location
+  - relay.term.physical-resource
+  - relay.term.resource-placement
+  - relay.term.note
+  conditional:
+  - when: A Person has an institutional affiliation relevant to the release.
+    require:
+    - relay.term.affiliation
+  - when: A physical research object is located or installed for a bounded period.
+    require:
+    - relay.term.resource-placement
+  excluded: []
+rules:
+- RELAY-CORE-001
+- RELAY-CORE-002
+- RELAY-CORE-003
+- RELAY-ID-001
+- RELAY-PACKAGE-001
+- RELAY-PACKAGE-002
+- RELAY-PACKAGE-003
