@@ -1,0 +1,25 @@
+object_type: domain
+id: relay.domain.assays-acquisition
+title: Assays and acquisition
+version: 0.1.0
+status: proposal
+classification: normative
+description: Assay definitions and executions, apparatus, instruments, sensors, acquisition configurations,
+  sessions, runs, and primary signals.
+maintainers:
+- Neuronautix
+dependencies:
+- relay.domain.core
+- relay.domain.isa
+- relay.domain.protocols-execution
+- relay.domain.data-assets
+terms: []
+rules: []
+scope:
+  includes:
+  - Assay execution
+  - Hardware and software configuration
+  - Acquisition runs and signals
+  excludes:
+  - Study allocation
+  - Statistical interpretation
