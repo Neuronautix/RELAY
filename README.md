@@ -2,11 +2,62 @@
 
 **RELAY — Research Exchange Layer for All laboratorY metadata**
 
+[![Validate RELAY repository](https://github.com/Neuronautix/RELAY/actions/workflows/validate.yml/badge.svg)](https://github.com/Neuronautix/RELAY/actions/workflows/validate.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](pyproject.toml)
+
 RELAY is an open, profile-driven standard for representing, validating, packaging, and exchanging the metadata and research context associated with laboratory studies.
 
 It is intended to provide a common exchange contract between laboratory information systems, acquisition platforms, analysis environments, repositories, electronic laboratory notebooks, data-management systems, and downstream reuse applications.
 
-> **Status:** experimental community specification. The repository currently establishes the architecture, governance, and object contracts; scientific domains and operational profiles will mature independently.
+> **Status:** experimental community specification and tooling. The object
+> architecture, repository validator, release lock, generated schema
+> foundations, package-integrity tooling, and Profile migration analysis are
+> implemented. Scientific Domains, operational Terms, mappings, and Profiles
+> remain proposals and must mature independently before a candidate release.
+
+## Quick start
+
+RELAY supports Python 3.10 and later.
+
+```text
+python -m pip install .
+relay validate-repository .
+relay verify-package examples/draft/minimal-ro-crate
+relay profile-diff old-profile.yaml new-profile.yaml
+relay capabilities
+```
+
+Commands return meaningful exit codes and can emit explainable JSON reports for
+CI and other tools:
+
+```text
+relay validate-repository . --format json --output relay-report.json
+```
+
+See the [tooling guide](docs/tooling.md) for package-manifest construction,
+Profile migration reports, the GitHub Action, report formats, and capability
+boundaries.
+
+## What is implemented
+
+| Capability | Status |
+|---|---|
+| Canonical descriptor and cross-reference validation | Available |
+| Explainable text and JSON diagnostics | Available |
+| Version-pinned release lock for all 52 registered objects | Available |
+| JSON Schema 2020-12, JSON-LD context, and SHACL foundations | Available |
+| Package-manifest construction and SHA-256 verification | Available |
+| Profile requiredness diff and migration planning | Available |
+| Reusable GitHub validation Action | Available |
+| Complete RO-Crate builder and persistent Profile Crate | Planned |
+| ISA round-trip translation with a loss ledger | Blocked on reviewed mappings |
+| Research-design and pseudoreplication linting | Blocked on operational Terms |
+| Interactive provenance and integrity graph | Planned |
+
+The machine-readable version of these boundaries is available through
+`relay capabilities --format json`. Planned or blocked features are not
+presented as conformance capabilities.
 
 ## Architectural model
 
@@ -50,11 +101,42 @@ rules/        Stable conformance requirements
 docs/         Architecture, policies, and implementation guidance
 schemas/      Derived schemas; never the semantic source of truth
 examples/     Draft examples and, later, valid/invalid fixtures
+relay/        Installable Python package and command-line tooling
 scripts/      Repository and conformance tooling
 tests/        Automated checks and fixtures
+
+namespace.yaml     Proposed persistent namespace and resolution policy
+release.yaml       Repository snapshot version and maturity
+relay.lock.yaml    Version, path, URI, and digest pins for registered objects
 ```
 
-Start with the [architecture](docs/architecture.md), [repository conventions](docs/repository-conventions.md), [Core domain](domains/core/README.md), [package strategy](docs/package-strategy.md), [conformance model](docs/conformance.md), and [tooling guide](docs/tooling.md).
+Start with the [architecture](docs/architecture.md),
+[repository conventions](docs/repository-conventions.md),
+[namespace and resolution policy](docs/namespace-and-resolution.md),
+[release-integrity model](docs/release-integrity.md),
+[Core domain](domains/core/README.md),
+[package strategy](docs/package-strategy.md), and
+[conformance model](docs/conformance.md).
+
+## Versioning, schemas, and integrity
+
+RELAY objects carry independent semantic versions. Repository snapshots are
+versioned separately in `release.yaml`; `relay.lock.yaml` pins the exact
+version, canonical URI, source path, and canonical-LF SHA-256 digest of every
+registered Term, Domain, Profile, Package, Mapping, and Rule.
+
+The proposed persistent namespace is `https://w3id.org/relay/`. It remains
+explicitly marked `proposed` until the external redirect is registered and
+tested.
+
+JSON Schema, JSON-LD, and SHACL artifacts are reproducibly generated under
+`schemas/`. They are validation and interoperability views of the canonical
+YAML—not parallel semantic authorities:
+
+```text
+python schemas/generate.py --check
+python scripts/validate_release.py
+```
 
 ## Scope
 
@@ -84,7 +166,17 @@ The initial focus is preclinical research, while the architecture is intended to
 
 ## Initial exchange strategy
 
-RELAY will define a dedicated profile of **RO-Crate 1.3** as its first normative exchange package. The RO-Crate root represents one immutable `DatasetRelease`; the stable conceptual `Dataset` remains distinct. ISA-JSON and ISA-Tab may be included or generated, while mappings to ISA RO-Crate/ISA-Crate are maintained as explicit Mapping objects rather than allowed to determine RELAY's entire model.
+RELAY defines a proposed dedicated profile of **RO-Crate 1.3** as its first
+exchange package. The RO-Crate root represents one immutable `DatasetRelease`;
+the stable conceptual `Dataset` remains distinct. ISA-JSON and ISA-Tab may be
+included or generated, while mappings to ISA RO-Crate/ISA-Crate are maintained
+as explicit Mapping objects rather than allowed to determine RELAY's entire
+model.
+
+The current example demonstrates package structure and integrity handling; it
+is intentionally not presented as a complete conformance fixture. A persistent
+Profile Crate, reviewed mapping entries, and complete operational Profile remain
+release-gate work.
 
 ## Non-goals
 
@@ -94,10 +186,12 @@ RELAY conformance indicates that information is represented and exchanged accord
 
 ## Development
 
-The first phase prioritizes architecture and semantics over application tooling. See the [roadmap](ROADMAP.md), [contribution guide](CONTRIBUTING.md), and [governance model](GOVERNANCE.md).
+Current development covers both semantic architecture and the tooling needed to
+test it. See the [roadmap](ROADMAP.md), [contribution guide](CONTRIBUTING.md),
+[governance model](GOVERNANCE.md), and [release procedure](RELEASES.md).
 
 RELAY's validation tooling supports Python 3.10 and later. Install the
-development dependency and run the complete local checks with:
+development dependencies and run the complete local checks with:
 
 ```text
 python -m pip install -r requirements-dev.txt
@@ -106,12 +200,14 @@ python schemas/generate.py --check
 python scripts/validate_repository.py
 python scripts/validate_release.py
 python -m unittest discover -s tests -p "test_*.py"
+python -m pip wheel . --no-deps --wheel-dir dist
 ```
 
-Install the experimental `relay` command with `python -m pip install .`.
-It provides explainable repository validation, package-manifest construction
-and verification, and Profile migration analysis; see the
-[tooling guide](docs/tooling.md).
+CI runs these checks on Python 3.10 and 3.14. Tag builds additionally verify
+release metadata and produce source archives, `relay.lock.yaml`, and
+`SHA256SUMS`; they do not publish a GitHub Release or DOI automatically.
+
+## Community and support
 
 Security-sensitive issues should follow the private reporting process in
 [SECURITY.md](SECURITY.md).
@@ -121,6 +217,10 @@ Feature requests, support questions, specification defects, and semantic object
 proposals use dedicated GitHub issue forms. Repository versions, immutable tag
 conventions, release checks, and archival guidance are documented in
 [RELEASES.md](RELEASES.md).
+
+Contributors must follow the [Code of Conduct](CODE_OF_CONDUCT.md). Third-party
+material and its licensing are governed by
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## Citation
 
