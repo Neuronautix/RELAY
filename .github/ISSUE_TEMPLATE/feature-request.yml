@@ -1,0 +1,48 @@
+name: Feature request
+description: Propose user-facing tooling, documentation, workflow, or other non-normative capability.
+title: "[Feature]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Use the RELAY object proposal form instead when the request changes
+        canonical semantics, conformance requirements, or an existing object.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Who is affected, and what are they unable to do today?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe the observable result without prescribing an implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: approach
+    attributes:
+      label: Suggested approach
+      description: Optional implementation ideas, interfaces, or examples.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Existing RELAY capabilities or external tools that partly address the problem.
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and compatibility
+      description: Identify affected users, files, formats, or integrations and any migration risk.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Request checks
+      options:
+        - label: I searched existing issues and the roadmap for this request.
+          required: true
+        - label: This request does not disclose confidential research data or a security vulnerability.
+          required: true

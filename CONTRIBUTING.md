@@ -2,6 +2,10 @@
 
 RELAY is a semantic specification. Contributions should preserve meaning, provenance, and version history rather than only making a serialization pass validation.
 
+Use the dedicated GitHub forms for specification defects, semantic object
+proposals, feature requests, and support questions. Security-sensitive reports
+must follow [SECURITY.md](SECURITY.md) and must not be filed publicly.
+
 ## Before opening a pull request
 
 1. Identify the affected first-class object: Term, Domain, Profile, Package, Mapping, or Conformance Rule.
@@ -11,7 +15,12 @@ RELAY is a semantic specification. Contributions should preserve meaning, proven
 5. Add explicit conformance rules for every normative requirement.
 6. Add mapping entries when external interoperability is affected.
 7. Add valid and invalid fixtures when the change is testable.
-8. Run `python scripts/validate_repository.py` and the unit tests.
+8. Using Python 3.10 or later, install `requirements-dev.txt`, run
+   `ruff check relay scripts schemas tests`, run
+   `python schemas/generate.py --check`, run
+   `python scripts/validate_repository.py`, run
+   `python scripts/validate_release.py`, and run
+   `python -m unittest discover -s tests -p "test_*.py"`.
 
 ## Pull-request scope
 
@@ -36,4 +45,10 @@ Do not manually edit generated schemas or exports. Change the canonical Term, Do
 
 ## Licensing
 
-A project license has not yet been selected. Do not contribute third-party text, schemas, or code unless its license is compatible with the license decision recorded by the maintainers.
+RELAY is licensed under the [MIT License](LICENSE). By submitting a
+contribution, you agree that it may be distributed under that license and
+that you have the right to submit it. Identify third-party material and its
+license in the pull request; do not copy material whose terms are incompatible
+with MIT distribution.
+
+All contributors must follow the [Code of Conduct](CODE_OF_CONDUCT.md).

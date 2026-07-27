@@ -15,14 +15,13 @@ root_entity: relay.term.dataset-release
 distribution_modes:
 - attached
 - detached
-profile_identifier: relay.profile.core-exchange
 persistent_profile_uri: null
 persistent_profile_uri_status: pending
 required_components:
 - ro-crate-metadata.json
 - exact RELAY profile declarations
 - payload manifest with content role, media type, byte size, and SHA-256 checksum for included immutable
-  files
+  files, plus the related RELAY entity or data asset
 - RELAY validation report
 optional_components:
 - ISA-JSON

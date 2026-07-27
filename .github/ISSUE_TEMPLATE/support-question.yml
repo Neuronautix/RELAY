@@ -1,0 +1,42 @@
+name: Support question
+description: Ask for help using or understanding RELAY.
+title: "[Question]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Public issues are not a confidential support channel. Remove research
+        data, credentials, personal data, and undisclosed vulnerability details.
+  - type: textarea
+    id: goal
+    attributes:
+      label: What are you trying to do?
+      description: Describe the intended exchange, validation, mapping, or contribution outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: attempted
+    attributes:
+      label: What have you tried?
+      description: Include relevant commands, paths, and documentation, with sensitive data removed.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Result or error
+      description: Paste the smallest useful output. Do not include confidential data.
+      render: shell
+  - type: input
+    id: revision
+    attributes:
+      label: RELAY version or commit
+      description: For example, a release tag or full commit hash.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, personal data, confidential research data, and vulnerability details.
+          required: true

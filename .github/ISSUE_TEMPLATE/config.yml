@@ -1,5 +1,8 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
 contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/Neuronautix/RELAY/security/policy
+    about: Read the private reporting policy; do not disclose vulnerabilities in a public issue.
   - name: RELAY architecture
     url: https://github.com/Neuronautix/RELAY/blob/main/docs/architecture.md
     about: Review the architecture before proposing a new object.

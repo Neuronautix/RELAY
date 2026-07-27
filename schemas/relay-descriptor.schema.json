@@ -1,0 +1,1244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/relay/schema/descriptor/0.1.0",
+  "title": "RELAY canonical descriptor",
+  "description": "Structural schema for RELAY Terms, Domains, Profiles, Packages, Mappings, Conformance Rules, and their canonical registries.",
+  "x-relay-generation": {
+    "generator": {
+      "name": "relay-schema-foundations",
+      "version": "0.1.0"
+    },
+    "generated_on": "2026-07-27",
+    "namespace": {
+      "path": "namespace.yaml",
+      "canonical_base_uri": "https://w3id.org/relay/",
+      "status": "proposed"
+    },
+    "sources": [
+      {
+        "path": "terms/registry.yaml",
+        "id": "relay.terms",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "b2523ea3a5e76ebfa42ffd2856f08e2784602837bab48808ef18590fd71f4197",
+        "objects": [
+          {
+            "id": "relay.term.dataset",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.dataset-release",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.agent",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.person",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.organization",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.software-agent",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.automated-service",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.affiliation",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.entity-identifier",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.role-assignment",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.location",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.physical-resource",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.resource-placement",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.provenance-event",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.provenance-link",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.registry-declaration",
+            "version": "0.1.0"
+          },
+          {
+            "id": "relay.term.note",
+            "version": "0.1.0"
+          }
+        ]
+      },
+      {
+        "path": "domains/analysis-qc/domain.yaml",
+        "id": "relay.domain.analysis-qc",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "40905450cc104b12ebc84814f155a10187f11ae9a9c3e4726d3874104200dbd4"
+      },
+      {
+        "path": "domains/assays-acquisition/domain.yaml",
+        "id": "relay.domain.assays-acquisition",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "b40117c5ea068b063bdcb6aeb42fb4830c7c02ff231efe58700c211574ae7fa4"
+      },
+      {
+        "path": "domains/biospecimens/domain.yaml",
+        "id": "relay.domain.biospecimens",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "e200ff70b977b2962baf8476cf114436bb20d288d350c0f4a1e067f6ccc27123"
+      },
+      {
+        "path": "domains/compliance-welfare/domain.yaml",
+        "id": "relay.domain.compliance-welfare",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "26cc7373c331fc8ba68923a74c47388e0d3dd2a246931222c3029987f41add5b"
+      },
+      {
+        "path": "domains/core/domain.yaml",
+        "id": "relay.domain.core",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "f33bc6ecb45b0136c0b8c23e49c6ed59f7437092283ed380d01eb30332c631da"
+      },
+      {
+        "path": "domains/data-assets/domain.yaml",
+        "id": "relay.domain.data-assets",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "d725081ee86691cd9540ee61e46295a4547e94910b4a80b87f42d2315cf59509"
+      },
+      {
+        "path": "domains/environment/domain.yaml",
+        "id": "relay.domain.environment",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "18cc7c0e7cb456dff935de6b7a63f5048c358a34534911aeb281233ff30fd6bc"
+      },
+      {
+        "path": "domains/housing-cages/domain.yaml",
+        "id": "relay.domain.housing-cages",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "d19b195c3ff3dd6ce84cec0c01648fd7bf794fa5929f850f9f293d945b8c7ae5"
+      },
+      {
+        "path": "domains/interventions-procedures/domain.yaml",
+        "id": "relay.domain.interventions-procedures",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "545f1943a4867b392dd6c57415b4fa7988d4a78aa7c3881eb2f1778b740074ca"
+      },
+      {
+        "path": "domains/isa/domain.yaml",
+        "id": "relay.domain.isa",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "135803cb71f33d4d61a3a970eb4494739db73ed0860037f3f179e1e570335f0c"
+      },
+      {
+        "path": "domains/observations-results/domain.yaml",
+        "id": "relay.domain.observations-results",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "989c15dd83b3760a0bec69ed0de9fc0e03c57b0ff8b042e6a035f991d601cbbe"
+      },
+      {
+        "path": "domains/protocols-execution/domain.yaml",
+        "id": "relay.domain.protocols-execution",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "d51114dd56896efc3f9f836d2499a1c71368be0cce952293eec1d88104406c30"
+      },
+      {
+        "path": "domains/study-design/domain.yaml",
+        "id": "relay.domain.study-design",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "7fcdfb18f3317a852c41fb48c8d57ebd8771b907cb33347772ea6c7ba9ca9a63"
+      },
+      {
+        "path": "domains/subjects/domain.yaml",
+        "id": "relay.domain.subjects",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "fba7fec2c2fdea5195ea8a829e2041fb82b41b0dd45f68cb218d45850da33e53"
+      },
+      {
+        "path": "profiles/core-exchange/profile.yaml",
+        "id": "relay.profile.core-exchange",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "b4d62a40d2f0823539c80793820c8a929c64285350aa7c837938fd3a7604e034"
+      },
+      {
+        "path": "packages/ro-crate/package.yaml",
+        "id": "relay.package.ro-crate",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "8260e773155484be3060d362bd73cf8e5217401a0bc16df836de1f4bca8c406e"
+      },
+      {
+        "path": "mappings/isa/mapping.yaml",
+        "id": "relay.mapping.isa",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "4ac3136d172ac62f1fc7fada18a4351365d255afbe172318cf1b122700945c67"
+      },
+      {
+        "path": "mappings/prov-o/mapping.yaml",
+        "id": "relay.mapping.prov-o",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "e0dff5a541f2f9c1223b1e04188ef9d30c07a6df91b28bfdeed00b9e82563c74"
+      },
+      {
+        "path": "mappings/ro-crate/mapping.yaml",
+        "id": "relay.mapping.ro-crate",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "6e458a2bc973131eb1b0db5a2bbe090880e53f464a30d471eab6a4c61735d343"
+      },
+      {
+        "path": "rules/registry.yaml",
+        "id": "relay.rules",
+        "version": "0.1.0",
+        "sha256_canonical_lf": "0120737b511497f266bf364dbf2e23040450c7d2dff2454525b4b95de88a714e",
+        "objects": [
+          {
+            "id": "RELAY-CORE-001",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-CORE-002",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-CORE-003",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-CORE-004",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-CORE-005",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-ID-001",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-SEM-001",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-DESIGN-001",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-PROFILE-001",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-PROFILE-002",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-PACKAGE-001",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-PACKAGE-002",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-PACKAGE-003",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-MAPPING-001",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-CONF-001",
+            "version": "0.1.0"
+          },
+          {
+            "id": "RELAY-CONF-002",
+            "version": "0.1.0"
+          }
+        ]
+      }
+    ]
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/termRegistry"
+    },
+    {
+      "$ref": "#/$defs/term"
+    },
+    {
+      "$ref": "#/$defs/domain"
+    },
+    {
+      "$ref": "#/$defs/profile"
+    },
+    {
+      "$ref": "#/$defs/package"
+    },
+    {
+      "$ref": "#/$defs/mapping"
+    },
+    {
+      "$ref": "#/$defs/ruleRegistry"
+    },
+    {
+      "$ref": "#/$defs/conformanceRule"
+    }
+  ],
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "semver": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+    },
+    "status": {
+      "enum": [
+        "proposal",
+        "experimental",
+        "candidate",
+        "stable",
+        "deprecated",
+        "withdrawn"
+      ]
+    },
+    "classification": {
+      "enum": [
+        "normative",
+        "informative"
+      ]
+    },
+    "maintainers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/nonEmptyString"
+      },
+      "uniqueItems": true
+    },
+    "termId": {
+      "type": "string",
+      "pattern": "^relay\\.term\\.[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "domainId": {
+      "type": "string",
+      "pattern": "^relay\\.domain\\.[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "profileId": {
+      "type": "string",
+      "pattern": "^relay\\.profile\\.[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "packageId": {
+      "type": "string",
+      "pattern": "^relay\\.package\\.[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "mappingId": {
+      "type": "string",
+      "pattern": "^relay\\.mapping\\.[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "ruleId": {
+      "type": "string",
+      "pattern": "^RELAY-[A-Z0-9]+(?:-[A-Z0-9]+)+$"
+    },
+    "termCore": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/termId"
+        },
+        "label": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/semver"
+        },
+        "kind": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "domain": {
+          "$ref": "#/$defs/domainId"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "definition": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "broader": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/termId"
+          },
+          "uniqueItems": true
+        },
+        "related": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/termId"
+          },
+          "uniqueItems": true
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "version",
+        "kind",
+        "domain",
+        "status",
+        "definition"
+      ],
+      "additionalProperties": false
+    },
+    "term": {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "term"
+        },
+        "id": {
+          "$ref": "#/$defs/termId"
+        },
+        "label": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/semver"
+        },
+        "kind": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "domain": {
+          "$ref": "#/$defs/domainId"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "definition": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "broader": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/termId"
+          },
+          "uniqueItems": true
+        },
+        "related": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/termId"
+          },
+          "uniqueItems": true
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "object_type",
+        "id",
+        "label",
+        "version",
+        "kind",
+        "domain",
+        "status",
+        "definition"
+      ],
+      "additionalProperties": false
+    },
+    "termRegistry": {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "term_registry"
+        },
+        "id": {
+          "const": "relay.terms"
+        },
+        "title": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/semver"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "classification": {
+          "$ref": "#/$defs/classification"
+        },
+        "maintainers": {
+          "$ref": "#/$defs/maintainers"
+        },
+        "terms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/termCore"
+          }
+        }
+      },
+      "required": [
+        "object_type",
+        "id",
+        "title",
+        "version",
+        "status",
+        "classification",
+        "maintainers",
+        "terms"
+      ],
+      "additionalProperties": false
+    },
+    "conditionalRequirement": {
+      "type": "object",
+      "properties": {
+        "when": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "require": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/termId"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "when",
+        "require"
+      ],
+      "additionalProperties": false
+    },
+    "domain": {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "domain"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^relay\\.domain\\.[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "title": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/semver"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "classification": {
+          "$ref": "#/$defs/classification"
+        },
+        "description": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "maintainers": {
+          "$ref": "#/$defs/maintainers"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/domainId"
+          },
+          "uniqueItems": true
+        },
+        "terms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/termId"
+          },
+          "uniqueItems": true
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ruleId"
+          },
+          "uniqueItems": true
+        },
+        "scope": {
+          "type": "object",
+          "properties": {
+            "includes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/nonEmptyString"
+              },
+              "uniqueItems": true
+            },
+            "excludes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/nonEmptyString"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "includes",
+            "excludes"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "object_type",
+        "id",
+        "title",
+        "version",
+        "status",
+        "classification",
+        "description",
+        "maintainers",
+        "dependencies",
+        "terms",
+        "rules",
+        "scope"
+      ],
+      "additionalProperties": false
+    },
+    "profile": {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "profile"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^relay\\.profile\\.[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "title": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/semver"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "classification": {
+          "$ref": "#/$defs/classification"
+        },
+        "description": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "maintainers": {
+          "$ref": "#/$defs/maintainers"
+        },
+        "domains": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/domainId"
+          },
+          "uniqueItems": true
+        },
+        "package": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/packageId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "requirements": {
+          "type": "object",
+          "properties": {
+            "required": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/termId"
+              },
+              "uniqueItems": true
+            },
+            "recommended": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/termId"
+              },
+              "uniqueItems": true
+            },
+            "optional": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/termId"
+              },
+              "uniqueItems": true
+            },
+            "conditional": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/conditionalRequirement"
+              }
+            },
+            "excluded": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/termId"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "required",
+            "recommended",
+            "optional",
+            "conditional",
+            "excluded"
+          ],
+          "additionalProperties": false
+        },
+        "rule_requirements": {
+          "type": "object",
+          "properties": {
+            "required": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ruleId"
+              },
+              "uniqueItems": true
+            },
+            "recommended": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ruleId"
+              },
+              "uniqueItems": true
+            },
+            "optional": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ruleId"
+              },
+              "uniqueItems": true
+            },
+            "conditional": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ruleId"
+              },
+              "uniqueItems": true
+            },
+            "excluded": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ruleId"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "required",
+            "recommended",
+            "optional",
+            "conditional",
+            "excluded"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "object_type",
+        "id",
+        "title",
+        "version",
+        "status",
+        "classification",
+        "description",
+        "maintainers",
+        "domains",
+        "package",
+        "requirements",
+        "rule_requirements"
+      ],
+      "additionalProperties": false
+    },
+    "package": {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "package"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^relay\\.package\\.[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "title": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/semver"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "classification": {
+          "$ref": "#/$defs/classification"
+        },
+        "description": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "maintainers": {
+          "$ref": "#/$defs/maintainers"
+        },
+        "base_specification": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            "version": {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "required": [
+            "name",
+            "version",
+            "uri"
+          ],
+          "additionalProperties": false
+        },
+        "root_entity": {
+          "$ref": "#/$defs/termId"
+        },
+        "distribution_modes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "persistent_profile_uri": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "persistent_profile_uri_status": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "required_components": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "optional_components": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "conformance_rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ruleId"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "object_type",
+        "id",
+        "title",
+        "version",
+        "status",
+        "classification",
+        "description",
+        "maintainers",
+        "base_specification",
+        "root_entity",
+        "distribution_modes",
+        "required_components",
+        "conformance_rules"
+      ],
+      "additionalProperties": false
+    },
+    "mappingEndpoint": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "mappingEntry": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "target": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "relation": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "transformation": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "information_loss": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "cardinality_or_datatype_impact": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "review_status": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "reviewer": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "source",
+        "target",
+        "relation",
+        "conditions",
+        "transformation",
+        "information_loss",
+        "cardinality_or_datatype_impact",
+        "evidence",
+        "review_status",
+        "reviewer"
+      ],
+      "additionalProperties": false
+    },
+    "mapping": {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "mapping"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^relay\\.mapping\\.[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "title": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/semver"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "classification": {
+          "$ref": "#/$defs/classification"
+        },
+        "description": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "maintainers": {
+          "$ref": "#/$defs/maintainers"
+        },
+        "source": {
+          "$ref": "#/$defs/mappingEndpoint"
+        },
+        "target": {
+          "$ref": "#/$defs/mappingEndpoint"
+        },
+        "direction": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/mappingEntry"
+          }
+        },
+        "review": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            "notes": {
+              "$ref": "#/$defs/nonEmptyString"
+            }
+          },
+          "required": [
+            "status",
+            "notes"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "object_type",
+        "id",
+        "title",
+        "version",
+        "status",
+        "classification",
+        "description",
+        "maintainers",
+        "source",
+        "target",
+        "direction",
+        "entries"
+      ],
+      "additionalProperties": false
+    },
+    "ruleCore": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/ruleId"
+        },
+        "title": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/semver"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^relay\\.(?:domain|profile|package|mapping)\\.[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true
+        },
+        "level": {
+          "enum": [
+            "MUST",
+            "MUST NOT",
+            "SHOULD",
+            "SHOULD NOT",
+            "MAY"
+          ]
+        },
+        "statement": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "rationale": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "testability": {
+          "enum": [
+            "automated",
+            "hybrid",
+            "manual"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "version",
+        "status",
+        "scope",
+        "level",
+        "statement",
+        "rationale",
+        "testability"
+      ],
+      "additionalProperties": false
+    },
+    "conformanceRule": {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "conformance_rule"
+        },
+        "id": {
+          "$ref": "#/$defs/ruleId"
+        },
+        "title": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/semver"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^relay\\.(?:domain|profile|package|mapping)\\.[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true
+        },
+        "level": {
+          "enum": [
+            "MUST",
+            "MUST NOT",
+            "SHOULD",
+            "SHOULD NOT",
+            "MAY"
+          ]
+        },
+        "statement": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "rationale": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "testability": {
+          "enum": [
+            "automated",
+            "hybrid",
+            "manual"
+          ]
+        }
+      },
+      "required": [
+        "object_type",
+        "id",
+        "title",
+        "version",
+        "status",
+        "scope",
+        "level",
+        "statement",
+        "rationale",
+        "testability"
+      ],
+      "additionalProperties": false
+    },
+    "ruleRegistry": {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "conformance_rule_registry"
+        },
+        "id": {
+          "const": "relay.rules"
+        },
+        "title": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/semver"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "classification": {
+          "$ref": "#/$defs/classification"
+        },
+        "maintainers": {
+          "$ref": "#/$defs/maintainers"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ruleCore"
+          }
+        }
+      },
+      "required": [
+        "object_type",
+        "id",
+        "title",
+        "version",
+        "status",
+        "classification",
+        "maintainers",
+        "rules"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

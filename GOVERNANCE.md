@@ -14,6 +14,10 @@ RELAY is an experimental community specification maintained in the open. The Neu
 
 **Contributors** propose and review changes through issues and pull requests.
 
+The active individuals holding maintainer authority are listed in
+[MAINTAINERS.md](MAINTAINERS.md). `.github/CODEOWNERS` routes review requests;
+it does not grant maintainer status or replace the decision process below.
+
 ## Decision process
 
 1. New semantics or breaking changes begin with an issue.
@@ -23,6 +27,12 @@ RELAY is an experimental community specification maintained in the open. The Neu
 5. The merge decision and unresolved uncertainty are recorded in the pull request.
 
 Maintainers may merge non-semantic corrections directly. Stable semantics must not change without a versioned proposal and migration note.
+
+When only one active maintainer is available, that maintainer may approve
+experimental changes after CI succeeds and the review record is public.
+Candidate or stable normative changes should also receive independent review
+from a relevant domain or mapping expert. Repository releases follow
+[RELEASES.md](RELEASES.md).
 
 ## Maturity progression
 
@@ -46,6 +56,9 @@ They may later become `deprecated` or `withdrawn`. Promotion requires documented
 
 Reviewers should disclose material involvement in a vendor system, standard, or implementation when reviewing a mapping or requirement that directly affects it. Decisions should preserve the provenance of proposals, evidence, and dissent.
 
-## License decision
+## License
 
-The repository must select and document licenses for specification text, machine-readable metadata, examples, and software before the first candidate release. Until then, no license is implied.
+RELAY specification text, machine-readable metadata, examples, and software
+are distributed under the [MIT License](LICENSE). A future license change
+requires a documented governance decision and must respect the rights attached
+to existing contributions.

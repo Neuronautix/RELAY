@@ -1,0 +1,30 @@
+schema_version: 1
+namespace:
+  preferred_prefix: relay
+  canonical_base_uri: https://w3id.org/relay/
+  status: proposed
+  activation: external_redirect_registration_required
+  owner: Neuronautix
+  repository: https://github.com/Neuronautix/RELAY
+identifiers:
+  compact_id_policy: preserved
+  versioned_uri_template: "{base_uri}{object_type}/{slug}/{version}"
+  unversioned_uri_template: "{base_uri}{object_type}/{slug}"
+  object_type_segments:
+    term: term
+    domain: domain
+    profile: profile
+    package: package
+    mapping: mapping
+    rule: rule
+resolution:
+  immutable_source_template: "https://github.com/Neuronautix/RELAY/blob/v{release_version}/{path}"
+  development_source_template: "https://github.com/Neuronautix/RELAY/blob/{git_commit}/{path}"
+  media_types:
+    html: text/html
+    yaml: application/yaml
+    jsonld: application/ld+json
+compatibility:
+  legacy_compact_ids_remain_canonical: true
+  compact_ids_resolve_through: relay.lock.yaml
+  aliases: []

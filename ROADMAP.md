@@ -44,4 +44,6 @@ The roadmap is ordered by dependency, not by calendar date.
 
 ## Release gate
 
-A candidate public release requires a selected license, stable namespace policy, at least one complete profile, at least one validated RO-Crate package, migration notes, and independent review of normative rules.
+A candidate public release requires documented MIT license compliance, a
+stable namespace policy, at least one complete profile, at least one validated
+RO-Crate package, migration notes, and independent review of normative rules.

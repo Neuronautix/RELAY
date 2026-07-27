@@ -6,14 +6,16 @@
       "content_role": "metadata_record_collection",
       "media_type": "application/json",
       "byte_size": 867,
-      "sha256": "e05e7736a0c90bcf3e374b62834064b2267d1b37dcc5db8246267fb2162b0a5b"
+      "sha256": "e05e7736a0c90bcf3e374b62834064b2267d1b37dcc5db8246267fb2162b0a5b",
+      "related_relay_entity": "urn:uuid:22222222-2222-4222-8222-222222222222"
     },
     {
       "path": "validation/relay-validation-report.json",
       "content_role": "validation_report",
       "media_type": "application/json",
       "byte_size": 583,
-      "sha256": "a11bb05b8dee2c3e84fd0bd4155fe8b4cf1ba47de1b729ebee4f2396c1583a74"
+      "sha256": "a11bb05b8dee2c3e84fd0bd4155fe8b4cf1ba47de1b729ebee4f2396c1583a74",
+      "related_relay_entity": "urn:uuid:22222222-2222-4222-8222-222222222222"
     }
   ],
   "note": "The manifest and ro-crate-metadata.json are excluded from this internal payload inventory."

@@ -23,10 +23,8 @@ requirements:
   - relay.term.provenance-event
   - relay.term.provenance-link
   optional:
-  - relay.term.affiliation
   - relay.term.location
   - relay.term.physical-resource
-  - relay.term.resource-placement
   - relay.term.note
   conditional:
   - when: A Person has an institutional affiliation relevant to the release.
@@ -36,11 +34,16 @@ requirements:
     require:
     - relay.term.resource-placement
   excluded: []
-rules:
-- RELAY-CORE-001
-- RELAY-CORE-002
-- RELAY-CORE-003
-- RELAY-ID-001
-- RELAY-PACKAGE-001
-- RELAY-PACKAGE-002
-- RELAY-PACKAGE-003
+rule_requirements:
+  required:
+  - RELAY-CORE-001
+  - RELAY-CORE-002
+  - RELAY-CORE-003
+  - RELAY-ID-001
+  - RELAY-PACKAGE-001
+  - RELAY-PACKAGE-002
+  - RELAY-PACKAGE-003
+  recommended: []
+  optional: []
+  conditional: []
+  excluded: []

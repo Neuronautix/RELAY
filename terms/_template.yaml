@@ -1,6 +1,7 @@
 object_type: term
 id: relay.term.example
 label: Example term
+version: 0.1.0
 kind: entity
 domain: relay.domain.example
 status: proposal

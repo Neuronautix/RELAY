@@ -54,7 +54,7 @@ scripts/      Repository and conformance tooling
 tests/        Automated checks and fixtures
 ```
 
-Start with the [architecture](docs/architecture.md), [repository conventions](docs/repository-conventions.md), [Core domain](domains/core/README.md), [package strategy](docs/package-strategy.md), and [conformance model](docs/conformance.md).
+Start with the [architecture](docs/architecture.md), [repository conventions](docs/repository-conventions.md), [Core domain](domains/core/README.md), [package strategy](docs/package-strategy.md), [conformance model](docs/conformance.md), and [tooling guide](docs/tooling.md).
 
 ## Scope
 
@@ -96,4 +96,39 @@ RELAY conformance indicates that information is represented and exchanged accord
 
 The first phase prioritizes architecture and semantics over application tooling. See the [roadmap](ROADMAP.md), [contribution guide](CONTRIBUTING.md), and [governance model](GOVERNANCE.md).
 
-The project must select licenses for specification text, machine-readable metadata, examples, and software before its first candidate release.
+RELAY's validation tooling supports Python 3.10 and later. Install the
+development dependency and run the complete local checks with:
+
+```text
+python -m pip install -r requirements-dev.txt
+ruff check relay scripts schemas tests
+python schemas/generate.py --check
+python scripts/validate_repository.py
+python scripts/validate_release.py
+python -m unittest discover -s tests -p "test_*.py"
+```
+
+Install the experimental `relay` command with `python -m pip install .`.
+It provides explainable repository validation, package-manifest construction
+and verification, and Profile migration analysis; see the
+[tooling guide](docs/tooling.md).
+
+Security-sensitive issues should follow the private reporting process in
+[SECURITY.md](SECURITY.md).
+
+Project accountability is recorded in [MAINTAINERS.md](MAINTAINERS.md).
+Feature requests, support questions, specification defects, and semantic object
+proposals use dedicated GitHub issue forms. Repository versions, immutable tag
+conventions, release checks, and archival guidance are documented in
+[RELEASES.md](RELEASES.md).
+
+## Citation
+
+If RELAY contributes to published work, cite the project using
+[CITATION.cff](CITATION.cff). Release-specific archival identifiers will be
+added when versioned releases are deposited.
+
+## License
+
+RELAY specification text, machine-readable metadata, examples, and software
+are licensed under the [MIT License](LICENSE).

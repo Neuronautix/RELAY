@@ -1,0 +1,90 @@
+name: Build RELAY release artifacts
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-artifacts-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+      - name: Check tag and release metadata
+        shell: bash
+        run: |
+          if [[ ! "$GITHUB_REF_NAME" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-(alpha|beta|rc)\.[1-9][0-9]*)?$ ]]; then
+            echo "::error::Tag must follow vMAJOR.MINOR.PATCH with an optional alpha.N, beta.N, or rc.N suffix."
+            exit 1
+          fi
+          VERSION="${GITHUB_REF_NAME#v}"
+          python - "$VERSION" <<'PY'
+          import pathlib
+          import sys
+          import yaml
+
+          version = sys.argv[1]
+          release = yaml.safe_load(pathlib.Path("release.yaml").read_text(encoding="utf-8"))
+          if release.get("version") != version:
+              raise SystemExit(
+                  f"release.yaml version must be {version!r}, got {release.get('version')!r}"
+              )
+          maturity = release.get("maturity")
+          allowed_maturities = {"proposal", "experimental", "candidate", "stable"}
+          if maturity not in allowed_maturities:
+              raise SystemExit(
+                  "release.yaml maturity must be proposal, experimental, candidate, "
+                  f"or stable for a tag; got {maturity!r}"
+              )
+          changelog = pathlib.Path("CHANGELOG.md").read_text(encoding="utf-8")
+          if f"## [{version}] - " not in changelog:
+              raise SystemExit(
+                  f"CHANGELOG.md must contain a '## [{version}] - YYYY-MM-DD' heading"
+              )
+          PY
+      - name: Install development requirements
+        run: python -m pip install -r requirements-dev.txt
+      - name: Validate release revision
+        run: |
+          ruff check relay scripts schemas tests
+          python schemas/generate.py --check
+          python scripts/validate_repository.py
+          python scripts/validate_release.py
+          python -m unittest discover -s tests -p 'test_*.py'
+      - name: Build archives and checksums
+        shell: bash
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          mkdir dist
+          git archive --format=tar.gz --prefix="RELAY-${VERSION}/" \
+            --output="dist/RELAY-${VERSION}.tar.gz" "$GITHUB_SHA"
+          git archive --format=zip --prefix="RELAY-${VERSION}/" \
+            --output="dist/RELAY-${VERSION}.zip" "$GITHUB_SHA"
+          cp relay.lock.yaml dist/relay.lock.yaml
+          (
+            cd dist
+            sha256sum \
+              "RELAY-${VERSION}.tar.gz" \
+              "RELAY-${VERSION}.zip" \
+              relay.lock.yaml > SHA256SUMS
+          )
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RELAY-${{ github.ref_name }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14

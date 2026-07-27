@@ -29,7 +29,7 @@ relay.mapping.<slug>
 RELAY-<SCOPE>-<NNN>
 ```
 
-These identifiers are semantic identifiers, not file paths. Moving a file does not create a new object. A persistent web namespace will be selected before candidate release; existing identifiers will be migrated explicitly rather than silently replaced.
+These identifiers are semantic identifiers, not file paths. Moving a file does not create a new object. The proposed persistent web namespace and backward-compatible resolution model are defined in [`namespace.yaml`](../namespace.yaml) and [Namespace and identifier resolution](namespace-and-resolution.md). Compact identifiers are preserved and resolved to exact versions through `relay.lock.yaml`; they are not silently replaced.
 
 ## Files and names
 
@@ -47,6 +47,10 @@ Normative requirements are represented by stable Rule objects. Markdown uses rul
 ## Generated outputs
 
 Derived schemas and serializations belong under `schemas/` or a future `dist/` directory. Generated files must identify their source object versions and generator version. They must not be manually maintained as parallel semantic definitions.
+
+The generated release catalog `relay.lock.yaml` is maintained by
+`scripts/validate_release.py`. It pins canonical source bytes and object
+versions but does not become a parallel semantic definition.
 
 ## Extensions
 

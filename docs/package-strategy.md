@@ -52,6 +52,12 @@ SHA-256 checksum for included immutable files
 related RELAY entity or data asset
 ```
 
+`ro-crate-metadata.json`, the RELAY manifest itself, and outer-archive metadata
+are package control files rather than payload files. They are covered by
+repository or transfer integrity controls to avoid a self-referential manifest.
+The manifest may inventory other control outputs, such as a validation report,
+when their bytes are immutable.
+
 The package's own outer archive checksum is recorded by the transfer system or repository because an archive cannot reliably contain its final self-checksum.
 
 ## ISA and ISA-Crate

@@ -1,0 +1,32 @@
+name: RELAY repository validation
+description: Validate RELAY descriptors and emit an explainable JSON report.
+inputs:
+  path:
+    description: Repository path to validate.
+    required: false
+    default: .
+  report:
+    description: Output path for the JSON validation report.
+    required: false
+    default: relay-validation-report.json
+outputs:
+  report:
+    description: Path to the generated JSON validation report.
+    value: ${{ steps.validate.outputs.report }}
+runs:
+  using: composite
+  steps:
+    - name: Install RELAY tooling
+      shell: bash
+      run: python -m pip install --disable-pip-version-check "${{ github.action_path }}"
+    - name: Validate RELAY repository
+      id: validate
+      shell: bash
+      run: |
+        python -m relay validate-repository "${{ inputs.path }}" \
+          --format json \
+          --output "${{ inputs.report }}"
+        echo "report=${{ inputs.report }}" >> "$GITHUB_OUTPUT"
+branding:
+  icon: check-circle
+  color: blue

@@ -23,6 +23,11 @@ not_tested
 
 A package must not receive `pass` for an untested rule. Critical failures are reported independently from completeness.
 
+A Rule with an empty `scope` is global. A non-empty scope contains registered
+RELAY object identifiers to which the Rule applies. Profiles classify selected
+Rules under `rule_requirements`; they do not make an unscoped Rule globally
+applicable merely by selecting it.
+
 ## Conformance claims
 
 A conformance claim identifies:

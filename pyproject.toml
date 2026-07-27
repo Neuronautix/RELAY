@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "relay-metadata"
+version = "0.1.0"
+description = "Validation and interoperability tooling for the RELAY metadata specification"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+  {name = "Neuronautix"}
+]
+keywords = [
+  "laboratory metadata",
+  "research data",
+  "interoperability",
+  "RO-Crate",
+  "ISA",
+]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+  "PyYAML>=6.0,<7",
+]
+
+[project.urls]
+Homepage = "https://github.com/Neuronautix/RELAY"
+Repository = "https://github.com/Neuronautix/RELAY"
+Issues = "https://github.com/Neuronautix/RELAY/issues"
+
+[project.scripts]
+relay = "relay.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["relay*", "scripts*"]

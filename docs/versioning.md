@@ -2,6 +2,12 @@
 
 RELAY repository releases and RELAY objects are distinct versioning layers.
 
+Each repository release records its complete object-version graph in
+`relay.lock.yaml`. Compact cross-object references resolve through that lock,
+so existing descriptors remain valid while consumers receive an exact version,
+source path, canonical URI, and integrity digest. See
+[Release lock and integrity](release-integrity.md).
+
 ## Object versions
 
 Terms, Domains, Profiles, Packages, Mappings, and Rule sets declare semantic versions independently.

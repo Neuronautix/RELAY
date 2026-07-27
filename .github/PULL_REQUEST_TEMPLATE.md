@@ -22,7 +22,10 @@ Describe mappings, transformations, version constraints, and any information los
 
 ## Validation
 
+- [ ] `ruff check relay scripts schemas tests`
+- [ ] `python schemas/generate.py --check`
 - [ ] `python scripts/validate_repository.py`
+- [ ] `python scripts/validate_release.py`
 - [ ] `python -m unittest discover -s tests`
 - [ ] Valid fixture added or updated when applicable
 - [ ] Invalid fixture added or updated when applicable

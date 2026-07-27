@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: If you use RELAY, please cite it using these metadata.
+title: "RELAY: Research Exchange Layer for All laboratorY metadata"
+type: software
+authors:
+  - name: Neuronautix
+abstract: >-
+  An open, profile-driven standard for representing, validating, packaging,
+  and exchanging laboratory-study metadata and research context.
+repository-code: https://github.com/Neuronautix/RELAY
+license: MIT
+keywords:
+  - laboratory metadata
+  - research data
+  - interoperability
+  - RO-Crate
+  - ISA

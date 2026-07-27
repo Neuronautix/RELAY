@@ -14,4 +14,9 @@ requirements:
   optional: []
   conditional: []
   excluded: []
-rules: []
+rule_requirements:
+  required: []
+  recommended: []
+  optional: []
+  conditional: []
+  excluded: []

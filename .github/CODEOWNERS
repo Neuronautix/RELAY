@@ -1,0 +1,10 @@
+# Default accountability for all repository content.
+* @dhuzard
+
+# Make operational and policy ownership explicit.
+/.github/ @dhuzard
+/docs/ @dhuzard
+/GOVERNANCE.md @dhuzard
+/MAINTAINERS.md @dhuzard
+/RELEASES.md @dhuzard
+/SECURITY.md @dhuzard

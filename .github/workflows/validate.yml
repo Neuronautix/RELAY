@@ -8,17 +8,35 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.14"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
+          cache: pip
       - name: Install development requirements
         run: python -m pip install -r requirements-dev.txt
+      - name: Lint Python
+        run: ruff check relay scripts schemas tests
+      - name: Check generated schema artifacts
+        run: python schemas/generate.py --check
       - name: Validate canonical objects and examples
         run: python scripts/validate_repository.py
+      - name: Validate namespace and release lock
+        run: python scripts/validate_release.py
       - name: Run tests
         run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Build installable distribution
+        run: python -m pip wheel . --no-deps --wheel-dir "${RUNNER_TEMP}/relay-wheel"
