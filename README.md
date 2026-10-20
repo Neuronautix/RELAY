@@ -1,5 +1,8 @@
 # RELAY
 
+> **R&D scope (October 2026):** RELAY is an experimental interoperability design, not a certified universal metadata standard. New work should be justified by a concrete exchange between two named systems, ideally using versioned mappings and loss-aware fixtures, rather than expanding the abstract model by default. See [agent guidance](AGENTS.md).
+
+
 **RELAY — Research Exchange Layer for All laboratorY metadata**
 
 [![Validate RELAY repository](https://github.com/Neuronautix/RELAY/actions/workflows/validate.yml/badge.svg)](https://github.com/Neuronautix/RELAY/actions/workflows/validate.yml)
